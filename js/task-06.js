@@ -1,14 +1,11 @@
 const validationInputRef = document.querySelector('#validation-input');
-const minimumNumberOfCharacters = validationInputRef.dataset.length;
-const classValid = validationInputRef.addEventListener(
-    'blur',
-    oncharacterСountСheck,
-);
 
-function oncharacterСountСheck(event) {
+validationInputRef.addEventListener('blur', onCharacterСountСheck);
+
+function onCharacterСountСheck(event) {
     const currentNumberOfCharacters = event.currentTarget.value.length;
 
-    if (currentNumberOfCharacters >= minimumNumberOfCharacters) {
+    if (currentNumberOfCharacters >= validationInputRef.dataset.length) {
         validationInputRef.classList.remove('invalid');
         validationInputRef.classList.add('valid');
     } else {

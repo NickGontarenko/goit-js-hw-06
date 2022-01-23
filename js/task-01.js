@@ -3,9 +3,9 @@ const numberOfCategoriesRef = allCategoriesRef.length;
 console.log(`Number of categories: ${numberOfCategoriesRef}`);
 
 allCategoriesRef.forEach(category => {
-  const headerTextRef = category.firstElementChild.textContent;
-  console.log(`Category: ${headerTextRef}`);
+    const headerTextRef = category.firstElementChild.textContent;
+    console.log(`Category: ${headerTextRef}`);
 
-  const numberOfElementsRef = category.lastElementChild.querySelectorAll('li').length;
-  console.log(`Elements: ${numberOfElementsRef}`);
+    const numberOfElementsRef = category.lastElementChild.children.length;
+    console.log(`Elements: ${numberOfElementsRef}`);
 });
