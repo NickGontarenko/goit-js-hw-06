@@ -13,7 +13,7 @@ function onSubmit(event) {
         alert(message);
     }
 
-    if (email !== '' || password !== '') {
+    if (email !== '' && password !== '') {
         const formData = {
             email,
             password,
