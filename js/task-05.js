@@ -1,15 +1,23 @@
 const textInputRef = document.querySelector('#name-input');
 const titleNameOutputRef = document.querySelector('#name-output');
-const NAME = 'Anonymous 🕶';
-textInputRef.addEventListener('input', onchangeNameOutput);
 
-function onchangeNameOutput(event) {
-    titleNameOutputRef.textContent =
-        event.currentTarget.value !== '' ? event.currentTarget.value : NAME;
+textInputRef.addEventListener('input', onСhangeNameOutput);
 
-    // if (event.currentTarget.value !== '') {
-    //     titleNameOutputRef.textContent = event.currentTarget.value;
-    // } else {
-    //     titleNameOutputRef.textContent = ;
-    // }
+function onСhangeNameOutput() {
+    // Третий вариант*** (я забыл что пустая строка приводится к false)
+    titleNameOutputRef.textContent = textInputRef.value || 'Anonymous';
 }
+
+// Второй вариант***
+// titleNameOutputRef =
+// titleNameOutputRef.textContent =
+//     event.currentTarget.value !== ''
+//         ? event.currentTarget.value
+//         : 'Anonymous 🕶';
+
+// Первый вариант***
+// if (event.currentTarget.value !== '') {
+//     titleNameOutputRef.textContent = event.currentTarget.value;
+// } else {
+//     titleNameOutputRef.textContent = 'Anonymous 🕶';
+// }
