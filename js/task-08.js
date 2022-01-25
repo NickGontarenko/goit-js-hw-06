@@ -10,16 +10,14 @@ function onSubmit(event) {
     const message = 'Предупреждение !!!! Все поля должны быть заполнены';
 
     if (email === '' || password === '') {
-        alert(message);
+        return alert(message); // <----- Всё оказолось куда проще )
     }
 
-    if (email !== '' && password !== '') {
-        const formData = {
-            email,
-            password,
-        };
+    const formData = {
+        email,
+        password,
+    };
 
-        console.log(formData);
-        event.currentTarget.reset();
-    }
+    console.log(formData);
+    event.currentTarget.reset();
 }
